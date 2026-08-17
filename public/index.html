@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPI Fraud Reporting Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>UPI Fraud Reporting Portal</h1>
+        <p>Report and manage suspicious digital payment incidents</p>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="card">
+        <h2>Submit Fraud Report</h2>
+
+        <div id="message"></div>
+
+        <form id="reportForm">
+            <input type="hidden" id="reportId">
+
+            <div class="form-grid">
+                <div>
+                    <label for="reporterName">Reporter Name *</label>
+                    <input type="text" id="reporterName" required>
+                </div>
+
+                <div>
+                    <label for="contact">Contact Information *</label>
+                    <input type="text" id="contact" required>
+                </div>
+
+                <div>
+                    <label for="incidentDate">Incident Date *</label>
+                    <input type="date" id="incidentDate" required>
+                </div>
+
+                <div>
+                    <label for="transactionId">Transaction / Payment ID *</label>
+                    <input type="text" id="transactionId" required>
+                </div>
+
+                <div>
+                    <label for="amount">Amount Involved (₹) *</label>
+                    <input type="number" id="amount" min="1" required>
+                </div>
+
+                <div>
+                    <label for="fraudType">Type of Incident *</label>
+                    <select id="fraudType" required>
+                        <option value="">Select type</option>
+                        <option>UPI Scam</option>
+                        <option>Phishing</option>
+                        <option>Fake Customer Care</option>
+                        <option>Fake Payment Request</option>
+                        <option>Unauthorized Transaction</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <label for="description">Description *</label>
+            <textarea id="description" rows="4" required
+                placeholder="Describe what happened..."></textarea>
+
+            <label for="additionalInfo">Additional Relevant Information</label>
+            <textarea id="additionalInfo" rows="3"
+                placeholder="Any other useful information"></textarea>
+
+            <div class="button-row">
+                <button type="submit" id="submitButton">Submit Report</button>
+                <button type="button" class="secondary" id="cancelButton" onclick="resetForm()" style="display:none;">
+                    Cancel Edit
+                </button>
+            </div>
+        </form>
+    </section>
+
+    <section class="card">
+        <div class="section-header">
+            <div>
+                <h2>Submitted Reports</h2>
+                <p id="reportCount">0 reports</p>
+            </div>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search reports..."
+            >
+
+            <select id="statusFilter">
+                <option value="All">All Statuses</option>
+                <option value="Pending">Pending</option>
+                <option value="Under Review">Under Review</option>
+                <option value="Resolved">Resolved</option>
+            </select>
+        </div>
+
+        <div id="reportsList"></div>
+    </section>
+
+</main>
+
+<footer>
+    <p>UPI Fraud Reporting Portal • Academic Project</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

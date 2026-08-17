@@ -1,0 +1,185 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+header {
+    background: #172554;
+    color: white;
+    padding: 35px 20px;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: auto;
+}
+
+h1 {
+    margin: 0 0 8px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.card {
+    background: white;
+    margin: 25px 0;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin: 12px 0 7px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+button {
+    border: none;
+    padding: 11px 18px;
+    border-radius: 7px;
+    cursor: pointer;
+    background: #2563eb;
+    color: white;
+    font-size: 15px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button.secondary {
+    background: #64748b;
+}
+
+button.danger {
+    background: #dc2626;
+}
+
+button.success {
+    background: #16a34a;
+}
+
+.section-header {
+    display: grid;
+    grid-template-columns: 1fr 250px 170px;
+    gap: 12px;
+    align-items: center;
+}
+
+.section-header h2 {
+    margin-bottom: 4px;
+}
+
+.section-header p {
+    margin-top: 0;
+    color: #666;
+}
+
+.report {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 18px;
+    margin-top: 15px;
+}
+
+.report-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.report h3 {
+    margin: 0 0 8px;
+}
+
+.report p {
+    margin: 7px 0;
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #fef3c7;
+    color: #92400e;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+#message {
+    margin-bottom: 15px;
+}
+
+.message {
+    padding: 12px;
+    border-radius: 7px;
+}
+
+.success-message {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.error-message {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #666;
+}
+
+@media (max-width: 750px) {
+    .form-grid,
+    .section-header {
+        grid-template-columns: 1fr;
+    }
+
+    .report-top {
+        flex-direction: column;
+    }
+}
